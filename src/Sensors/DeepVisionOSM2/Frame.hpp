@@ -40,6 +40,9 @@ namespace Sensors
   {
     using DUNE_NAMESPACES;
 
+    //! File format version.
+    static const uint32_t c_version = 0x00000001;
+
     //! Frame class to DeepVision's OEM Sonar Module OSM2.
     //!
     //! This class arranges the header, position and sonar
@@ -233,14 +236,10 @@ namespace Sensors
       std::vector<uint8_t> m_left_data;
       //! Starboard transducer sonar data.
       std::vector<uint8_t> m_right_data;
-      //! Maximum frame size.
-      static const unsigned c_max_size = 1024;
       //! Frame header size.
       static const unsigned c_hdr_size = 18;
       //! Frame position size.
       static const unsigned c_pos_size = (sizeof(double) + sizeof(float)) * 2;
-      //! File format version.
-      static const uint32_t c_version = 0x00000001;
     };
   }
 }
